@@ -34,7 +34,8 @@ const transcribeAudio = async (audioPath) => {
 const generateSummary = async (transcript) => {
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
+      // model: "gpt-4o",
+      model: "gpt-4.1-mini-2025-04-14",
       messages: [
         {
           role: "system",

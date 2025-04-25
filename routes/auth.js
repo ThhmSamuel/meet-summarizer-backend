@@ -5,7 +5,9 @@ const {
   login,
   googleLogin,
   getMe,
-  logout
+  logout,
+  forgotPassword,
+  resetPassword
 } = require('../controllers/authController');
 const { protect } = require('../middleware/auth');
 
@@ -16,5 +18,7 @@ router.post('/login', login);
 router.post('/google', googleLogin);
 router.get('/me', protect, getMe);
 router.get('/logout', logout);
+router.post('/forgotpassword', forgotPassword);
+router.put('/resetpassword/:resettoken', resetPassword);
 
 module.exports = router;

@@ -6,7 +6,12 @@ const {
   deleteSummary
 } = require('../controllers/summaryController');
 
+const { protect } = require('../middleware/auth');
+
 const router = express.Router();
+
+//Applu protection to all middleware routes
+router.use(protect);
 
 // GET /api/summary
 // Get all summaries (list view)
